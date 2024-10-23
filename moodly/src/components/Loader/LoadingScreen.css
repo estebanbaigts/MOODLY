@@ -1,0 +1,46 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.black-hole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border-radius: 50%;
+    animation: expandAndShrink 3s ease-in-out forwards;
+}
+
+.logo {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s ease, width 1s ease, height 1s ease;
+}
+
+@keyframes expandAndShrink {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.black-hole:hover .logo {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
